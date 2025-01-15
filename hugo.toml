@@ -1,0 +1,70 @@
+baseURL = 'https://example.org/'
+languageCode = 'es'
+title = 'Resagar'
+enableEmoji = true
+
+
+[module]
+  [[module.imports]]
+    path = "github.com/hugo-sid/hugo-blog-awesome"
+
+[params]
+sitename = "resagar"
+description = "Soy backend developer con 5 años de experiencia, me gusta mucho Go y similares como Rust y Zig. Me encantan las herramientas de Terminal. Amo NeoVim."
+# mainSections = ['posts']
+rssFeedDescription = "summary"
+dateFormat = "Monday, 2 January 2006"
+
+[params.webmanifest]
+  name = "resagar"
+  short_name = "RG"
+  start_url = "/" 
+  theme_color = "#434648"
+  background_color = "#fff"
+  display = "standalone"
+
+[params.author]
+name = "Rene Garcia"
+avatar = "avatar.jpg"
+intro = "Rene Garcia"
+description = "Soy backend developer con 5 años de experiencia, me gusta mucho Go y similares como Rust y Zig. Me encantan las herramientas de Terminal. Amo NeoVim."
+
+
+[menu]
+  [[menu.main]]
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Post'
+    url = '/posts/'
+    weight = 20
+  # [[menu.main]]
+  #   pageRef="about"
+  #   name = 'Acerca de'
+  #   url = '/about/'
+  #   weight = 30
+
+[params.browserconfig]
+  TileColor = "#2d89ef" # default windows 10 blue tile color
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/resagar"
+
+
+[[params.socialIcons]]
+name = "x"
+url = "https://x.com/rsamuelgarcia"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/renegarcia-software-backend"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "/index.xml"
