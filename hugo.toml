@@ -65,6 +65,16 @@ url = "https://x.com/rsamuelgarcia"
 name = "linkedin"
 url = "https://www.linkedin.com/in/renegarcia-software-backend"
 
+
+[[params.socialIcons]]
+name = "kofi"
+url = "https://ko-fi.com/resagar"
+
+
+[[params.socialIcons]]
+name = "patreon"
+url = "https://patreon.com/resagar"
+
 [[params.socialIcons]]
 name = "Rss"
 url = "/index.xml"
