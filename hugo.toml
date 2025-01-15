@@ -56,6 +56,9 @@ description = "Soy backend developer con 5 años de experiencia, me gusta mucho 
 name = "github"
 url = "https://github.com/resagar"
 
+[[params.socialIcons]]
+name = "cv"
+url = "cv.pdf"
 
 [[params.socialIcons]]
 name = "x"
