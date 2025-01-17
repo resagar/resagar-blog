@@ -10,7 +10,7 @@ enableEmoji = true
 
 [params]
 sitename = "resagar"
-description = "Soy backend developer con 5 años de experiencia, me gusta mucho Go, Ruby y Rails. Me encantan las herramientas de Terminal. Amo NeoVim."
+description = "Soy backend developer con 5 años de experiencia, me gusta mucho Go, Rust, Zig y Lua. Me encantan las herramientas de Terminal. Amo NeoVim."
 # mainSections = ['posts']
 rssFeedDescription = "summary"
 dateFormat = "Monday, 2 January 2006"
@@ -27,7 +27,7 @@ dateFormat = "Monday, 2 January 2006"
 name = "Rene Garcia"
 avatar = "avatar.jpg"
 intro = "Rene Garcia"
-description = "Soy backend developer con 5 años de experiencia, me gusta mucho Go, Ruby y Rails. Me encantan las herramientas de Terminal. Amo NeoVim."
+description = "Soy backend developer con 5 años de experiencia, me gusta mucho Go, Rust, Zig y Lua. Me encantan las herramientas de Terminal. Amo NeoVim."
 
 
 [menu]
