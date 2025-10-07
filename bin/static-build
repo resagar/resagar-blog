@@ -20,8 +20,6 @@ export SECRET_KEY_BASE_DUMMY=1
 # done before generating the Parklife build as Rails will blow up if it detects
 # missing assets in production.
 
-bundle exec rails generate rails_icons:install --libraries=lucide
-
 bundle exec rails assets:precompile
 
 # Build with Parklife - and forward arguments sent to this script.

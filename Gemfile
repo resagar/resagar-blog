@@ -67,11 +67,13 @@ end
 gem "parklife", "~> 0.8.0"
 
 gem "rouge", "~> 4.6"
-gem "kramdown-parser-gfm", "~> 1.1"
-gem "kramdown", "~> 2.5"
-gem "metainspector", "~> 5.16"
-gem "front_matter_parser", "~> 1.0"
 
-gem "rails_icons", "~> 1.4"
+gem "kramdown-parser-gfm", "~> 1.1"
+
+gem "kramdown", "~> 2.5"
+
+gem "metainspector", "~> 5.16"
+
+gem "front_matter_parser", "~> 1.0"
 
 gem "parklife-rails", "~> 0.3.0"

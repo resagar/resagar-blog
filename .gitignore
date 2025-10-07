@@ -36,5 +36,4 @@
 /app/assets/builds/*
 !/app/assets/builds/.keep
 build/
-/app/assets/svg/
 build.zip
