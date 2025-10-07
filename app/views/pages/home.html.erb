@@ -1,0 +1,92 @@
+<header class="flex flex-row justify-around">
+  <%= image_tag(
+    "perfil2.jpg",
+    class: "size-72 rounded-xl object-cover rotate-[-3deg]",
+  ) %>
+  <section class="flex flex-col max-w-md space-y-4">
+    <h1 class="text-4xl font-bold tracking-tight"><span class="block">Hola! Soy Rene Garcia,</span>
+      <span class="text-accent">Ruby On Rails</span>
+      Developer.</h1>
+    <h2 class="text-xl opacity-60">Construyo, aprendo, falló, y sigo adelante. Aquí escribo sobre cómo uso
+      Rails para crear productos, monetizar ideas y vivir del desarrollo.
+      Freelancer disponible si quieres que haga realidad tu idea.
+    </h2>
+    <div class="flex flex-row justify-baseline items-center space-x-5">
+      <%= link_to "https://x.com/rsamuelgarcia", target: "_blank", rel: "noopener noreferrer" do %>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-25 -25 350 350"
+          fill="currentColor"
+          aria-hidden="true"
+          class="size-6 opacity-50 hover:opacity-100"
+        >
+          <path
+            d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"
+          ></path>
+        </svg>
+      <% end %>
+      <%= link_to "https://bsky.app/profile/resagar.com", target: "_blank", rel: "noopener noreferrer" do %>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="
+            icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky size-6
+            opacity-50 hover:opacity-100
+          "
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path
+            d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z"
+          /></svg>
+      <% end %>
+      <%= link_to "https://www.linkedin.com/in/resagar-backend-developer/", target: "_blank", rel: "noopener noreferrer" do %>
+        <%= icon("linkedin", class: "size-6 opacity-50 hover:opacity-100") %>
+      <% end %>
+      <%= link_to "https://github.com/resagar", target: "_blank", rel: "noopener noreferrer" do %>
+        <%= icon("github", class: "size-6 opacity-50 hover:opacity-100") %>
+      <% end %>
+    </div>
+  </section>
+</header>
+<section class="flex flex-row pt-32 justify-around">
+  <div class="flex flex-col w-56 justify-center items-baseline space-y-3">
+    <div class="flex flex-row justify-center items-center space-x-2">
+      <%= icon("newspaper", class: "size-5") %>
+      <h2 class="text-xl font-bold">
+        Articulos
+      </h2>
+    </div>
+    <p class="text-md opacity-60">Mis articulos sobre Ruby on Rails, Hotwire y emprendimiento en
+      solitario.</p>
+    <%= link_to "leer mas", posts_list_path, class: "text-accent hover:opacity-60" %>
+  </div>
+  <div class="flex flex-col w-56 justify-center items-baseline space-y-3">
+    <div class="flex flex-row justify-center items-center space-x-2">
+      <%= icon("mail", class: "size-5") %>
+      <h2 class="text-xl font-bold">
+        Newsletter
+      </h2>
+    </div>
+    <p class="text-md opacity-60">Boletin semanal donde hablo sobre mi camino como emprendedor en solitario
+      y hago #buildinpublic.</p>
+    <%= link_to "suscribete",
+    "https://newsletter.resagar.com",
+    class: "text-accent hover:opacity-60" %>
+  </div>
+  <div class="flex flex-col w-56 justify-center items-baseline space-y-3">
+    <div class="flex flex-row justify-center items-center space-x-2">
+      <%= icon("laptop", class: "size-5") %>
+      <h2 class="text-xl font-bold">
+        Services
+      </h2>
+    </div>
+    <p class="text-md opacity-60">Desarrollo software usando Ruby on Rails, si tienes un proyecto en mente
+      no dudes en contactarme.</p>
+    <%= link_to "Trabaja con Rene",
+    posts_list_path,
+    class: "text-accent hover:opacity-60" %>
+  </div>
+</section>

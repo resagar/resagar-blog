@@ -1,0 +1,33 @@
+<footer
+  class="
+    footer h-28 sm:footer-horizontal justify-between content-center bg-base-100
+    border-t border-base-200 text-base-content p-4 px-28
+  "
+>
+  <nav class="w-full flex flex-row justify-between">
+    <ul class=" flex flex-row justify-center items-center font-sans font-medium">
+      <li class="size-full flex flex-row justify-center items-center">
+        <%= link_to "About",
+        "#",
+        class: "pr-3 h-full flex flex-row items-center hover:text-accent" %>
+      </li>
+      <li class=" size-full flex flex-row justify-center items-center">
+        <%= link_to "Articulos",
+        posts_list_path,
+        class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
+      </li>
+      <li class="size-full flex flex-row justify-center items-center">
+        <%= link_to "Newsletter",
+        "https://www.newsletter.resagar.com",
+        class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
+      </li>
+      <li class="size-full flex flex-row justify-center items-center"><%= link_to "Servicios",
+        "#",
+        class: "px-3 h-full flex flex-row items-center hover:text-accent" %></li>
+    </ul>
+  </nav>
+  <aside>
+    <p>© Rene Garcia, All right reserved</p>
+  </aside>
+
+</footer>

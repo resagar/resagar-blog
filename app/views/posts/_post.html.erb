@@ -1,0 +1,21 @@
+<article class="prose" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">
+      <%= markdownify(post.title) %>
+    </h1>
+    <p>
+      <% if post.published_at %>
+        <time datetime="<%= post.published_at.iso8601 %>" itemprop="datePublished"><%= post.published_at.strftime("%B %-d, %Y") %></time>
+      <% end %>
+
+      <% if post.tags.any? %>
+        • Tagged
+        <%= to_sentence post.tags.map { |tag| link_to tag, tag_path(tag.parameterize) } %>
+      <% end %>
+    </p>
+  </header>
+
+  <div itemprop="articleBody">
+    <%= post.content %>
+  </div>
+</article>

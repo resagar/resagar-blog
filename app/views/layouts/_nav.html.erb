@@ -1,0 +1,41 @@
+<nav class="w-full flex flex-row justify-between">
+  <% unless current_page?(root_path) %>
+
+    <%= link_to root_path do %>
+      <%= image_tag("perfil2.jpg", class: "size-10 object-cover rounded-full") %>
+    <% end %>
+  <% else %>
+    <div class="size-10"></div>
+  <% end %>
+  <ul
+    class="
+      flex flex-row justify-center items-center border border-base-300 rounded-full
+      shadow-md px-3 py-0 font-sans font-medium text-sm
+    "
+  >
+    <li class="size-full flex flex-row justify-center items-center">
+      <%= link_to "About",
+      "#",
+      class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
+    </li>
+    <li class=" size-full flex flex-row justify-center items-center">
+      <%= link_to "Articulos",
+      posts_list_path,
+      class:
+        "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(posts_list_path)}" %>
+    </li>
+    <li class="size-full flex flex-row justify-center items-center">
+      <%= link_to "Newsletter",
+      "https://www.newsletter.resagar.com",
+      class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
+    </li>
+    <li class="size-full flex flex-row justify-center items-center"><%= link_to "Servicios",
+      "#",
+      class: "px-3 h-full flex flex-row items-center hover:text-accent" %></li>
+  </ul>
+  <div class="tooltip tooltip-right" data-tip="Rss">
+    <%= link_to feed_url(format: :xml), class: "btn btn-outline border-base-300 shadow-md rounded-full" do %>
+      <%= icon("rss") %>
+    <% end %>
+  </div>
+</nav>
