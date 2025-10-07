@@ -31,4 +31,4 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: |
-            pages deploy ./build --proyect-name=resagar --branch=main
+            pages deploy ./build --project-name=resagar --branch=main
