@@ -4,4 +4,9 @@ class PagesController < ApplicationController
 
   def tags
   end
+
+  def about
+    @page = Page.all.find { | page | page.slug == params[:action] }
+    raise ActionController::RoutingError, "Not Found" unless @page
+  end
 end

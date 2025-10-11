@@ -8,3 +8,7 @@
   themes: dracula;
 }
 @plugin "@tailwindcss/typography";
+
+.links-to-about {
+  @apply flex flex-row items-center justify-baseline gap-2 hover:opacity-60;
+}

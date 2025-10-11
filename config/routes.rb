@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
+  get "about", to: "pages#about", as: :about
 
   get "/posts/:page", to: "posts#index", constraints: { page: /\d+/ }, as: :posts
   get "/posts", to: "posts#index", as: :posts_list

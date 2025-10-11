@@ -3,6 +3,7 @@ title: "Esto solo esta empezando"
 date: 2025-10-08 10:46 UTC
 published: true
 summary: "El blog que tiene en frente es un proyecto completamente hecho por mi, aqui te hablo mas sobre eso."
+og_image: "https://mugshotbot.com/m/dJMy2wbA"
 tags: [emprendimiento, indie hacker, historia]
 ---
 

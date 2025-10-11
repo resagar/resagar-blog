@@ -8,7 +8,8 @@ Rails.application.configure do
 
   # Reload when markdown files change
   reloaders << ActiveSupport::FileUpdateChecker.new([], {
-                        "_posts" => [ "md", "markdown" ]
+                        "_posts" => [ "md", "markdown" ],
+                        "_pages" => [ "md", "markdown" ]
                                                     }) do
     Rails.application.reload_routes!
   end

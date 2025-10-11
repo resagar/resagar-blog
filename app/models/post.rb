@@ -43,6 +43,10 @@ class Post < ApplicationModel
     frontmatter.fetch("title", "")
   end
 
+  def og_image
+    frontmatter.fetch("og_image", "")
+  end
+
   def content
     @_content ||= Kramdown::Document.new(body, input: "GFM").to_html.html_safe # rubocop:disable Rails/OutputSafety
   end

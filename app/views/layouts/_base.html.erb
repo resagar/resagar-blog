@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html data-theme="dracula">
   <head>
-    <title><%= content_for(:title) || "Resagar Blog" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <!-- Título y descripción -->
+    <title><%= yield(:title) || "Rene Garcia – Ruby on Rails Developer" %></title>
+    <meta
+      name="description"
+      content="<%= yield(:description) || 'Blog sobre Rails, indie hacking y desarrollo freelance. Construyo en público y comparto lo que aprendo.' %>"
+    >
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta
+      property="og:title"
+      content="<%= yield(:title) || 'Rene Garcia – Ruby on Rails Developer' %>"
+    >
+    <meta
+      property="og:description"
+      content="<%= yield(:description) || 'Blog sobre Rails, indie hacking y desarrollo freelance.' %>"
+    >
+    <meta
+      property="og:image"
+      content="<%= yield(:og_image) || 'https://mugshotbot.com/m/5YypF97U' %>"
+    >
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:type" content="<%= yield(:og_type) || 'website' %>">
+    <meta property="og:site_name" content="Rene Garcia">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+      name="twitter:title"
+      content="<%= yield(:title) || 'Rene Garcia – Ruby on Rails Developer' %>"
+    >
+    <meta
+      name="twitter:description"
+      content="<%= yield(:description) || 'Blog sobre Rails, indie hacking y desarrollo freelance.' %>"
+    >
+    <meta
+      name="twitter:image"
+      content="<%= yield(:og_image) || 'https://mugshotbot.com/m/5YypF97U' %>"
+    >
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= yield :head %>
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
