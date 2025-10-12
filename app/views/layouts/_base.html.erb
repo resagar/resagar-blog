@@ -5,41 +5,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <!-- Título y descripción -->
-    <title><%= yield(:title) || "Rene Garcia – Ruby on Rails Developer" %></title>
-    <meta
-      name="description"
-      content="<%= yield(:description) || 'Blog sobre Rails, indie hacking y desarrollo freelance. Construyo en público y comparto lo que aprendo.' %>"
-    >
+    <title><%= yield(:title) %></title>
+    <meta name="description" content="<%= yield(:description) %>">
     <!-- Open Graph / Facebook / LinkedIn -->
-    <meta
-      property="og:title"
-      content="<%= yield(:title) || 'Rene Garcia – Ruby on Rails Developer' %>"
-    >
-    <meta
-      property="og:description"
-      content="<%= yield(:description) || 'Blog sobre Rails, indie hacking y desarrollo freelance.' %>"
-    >
-    <meta
-      property="og:image"
-      content="<%= yield(:og_image) || 'https://mugshotbot.com/m/5YypF97U' %>"
-    >
+    <meta property="og:title" content="<%= yield(:title) %>">
+    <meta property="og:description" content="<%= yield(:description) %>">
+    <meta property="og:image" content="<%= yield(:og_image) %>">
     <meta property="og:url" content="<%= request.original_url %>">
-    <meta property="og:type" content="<%= yield(:og_type) || 'website' %>">
+    <meta property="og:type" content="<%= yield(:og_type) %>">
     <meta property="og:site_name" content="Rene Garcia">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta
-      name="twitter:title"
-      content="<%= yield(:title) || 'Rene Garcia – Ruby on Rails Developer' %>"
-    >
-    <meta
-      name="twitter:description"
-      content="<%= yield(:description) || 'Blog sobre Rails, indie hacking y desarrollo freelance.' %>"
-    >
-    <meta
-      name="twitter:image"
-      content="<%= yield(:og_image) || 'https://mugshotbot.com/m/5YypF97U' %>"
-    >
+    <meta name="twitter:title" content="<%= yield(:title) %>">
+    <meta name="twitter:description" content="<%= yield(:description) %>">
+    <meta name="twitter:image" content="<%= yield(:og_image) %>">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
