@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @recent_posts = Post.all.reverse.take(5)
   end
 
   def tags

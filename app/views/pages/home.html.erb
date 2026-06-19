@@ -119,3 +119,18 @@
     </div>
   </div>
 </section>
+
+<section class="pt-16">
+  <div class="flex flex-col space-y-2 mb-6">
+    <h2 class="text-2xl font-bold font-sans">Últimos artículos</h2>
+    <p class="text-sm opacity-60">Lo más reciente que he escrito.</p>
+  </div>
+
+  <div class="flex flex-col max-w-2xl space-y-5">
+    <%= render partial: "posts/post_card", collection: @recent_posts, as: :post %>
+  </div>
+
+  <div class="mt-6">
+    <%= link_to "Ver todos los artículos →", posts_list_path, class: "text-accent hover:opacity-60 font-medium" %>
+  </div>
+</section>
