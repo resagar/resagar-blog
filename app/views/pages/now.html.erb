@@ -1,0 +1,25 @@
+<% provide :title, "Lo que estoy haciendo ahora — Rene Garcia" %>
+<% provide :description,
+"Una actualizacion honesta y frecuente sobre lo que estoy construyendo, aprendiendo y en que estoy enfocado. Inspirado en sive.rs/now." %>
+<% provide :og_image, "https://mugshotbot.com/m/5YypF97U" %>
+<% provide :og_type, "article" %>
+
+<article class="prose max-w-3xl mx-auto py-8">
+  <header class="pb-6 not-prose">
+    <p class="text-sm opacity-50 font-sans mb-2">
+      <%= Time.current.strftime("Ultima actualizacion: %-d de %B, %Y") %>
+    </p>
+    <h1 class="text-5xl font-sans font-bold"><%= @page.title %></h1>
+  </header>
+
+  <%= markdownify(@page.content) %>
+
+  <hr class="my-12 border-base-300 opacity-30">
+
+  <p class="text-sm opacity-50 not-prose">
+    Inspirado por
+    <%= link_to "sive.rs/now", "https://sive.rs/now", target: "_blank", rel: "noopener noreferrer", class: "text-accent hover:opacity-60" %>
+    de Derek Sivers.
+    <%= link_to "← Volver al inicio", root_path, class: "text-accent hover:opacity-60 ml-4" %>
+  </p>
+</article>
