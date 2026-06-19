@@ -25,16 +25,16 @@
       class:
         "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(about_path)}" %>
     </li>
+    <li class="size-full flex flex-row justify-center items-center">
+      <%= link_to "Now",
+      now_path,
+      class: "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(now_path)}" %>
+    </li>
     <li class=" size-full flex flex-row justify-center items-center">
       <%= link_to "Articulos",
       posts_list_path,
       class:
         "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(posts_list_path)}" %>
-    </li>
-    <li class="size-full flex flex-row justify-center items-center">
-      <%= link_to "Now",
-      now_path,
-      class: "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(now_path)}" %>
     </li>
   </ul>
   <div class="tooltip tooltip-right" data-tip="Rss">
