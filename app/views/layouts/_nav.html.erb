@@ -14,6 +14,12 @@
     "
   >
     <li class="size-full flex flex-row justify-center items-center">
+      <%= link_to "Home",
+      root_path,
+      class:
+        "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(root_path)}" %>
+    </li>
+    <li class="size-full flex flex-row justify-center items-center">
       <%= link_to "About",
       about_path,
       class:
