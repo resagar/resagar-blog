@@ -31,6 +31,10 @@ class Page < ApplicationModel
     frontmatter.fetch("title", "")
   end
 
+  def summary
+    frontmatter["summary"] || frontmatter["description"] || ""
+  end
+
   def content
     @_content ||= Kramdown::Document.new(body, input: "GFM").to_html.html_safe # rubocop:disable Rails/OutputSafety
   end

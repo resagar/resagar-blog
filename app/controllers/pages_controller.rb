@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @recent_posts = Post.all.reverse.take(5)
+    @now_page = Page.all.find { | page | page.slug == "now" }
   end
 
   def tags

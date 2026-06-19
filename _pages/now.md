@@ -1,5 +1,6 @@
 ---
 title: "Lo que estoy haciendo ahora"
+summary: "Mantengo una pagina honesta y actualizada con lo que estoy construyendo, aprendiendo y en que estoy enfocado actualmente. Sin filtros, sin SEO, sin keywords — solo lo que realmente importa ahora mismo."
 ---
 
 Esta es mi pagina **/now**, inspirada en la idea de Derek Sivers. La idea es simple: una pagina honesta y actualizada con lo que estoy construyendo, aprendiendo y en que estoy enfocado en este momento de mi vida. Sin filtros, sin SEO, sin palabras clave — solo lo que realmente importa ahora mismo.
