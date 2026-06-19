@@ -27,7 +27,7 @@ push a main
 > ℹ️ **Nota sobre Kamal/Dockerfile:** El repo conserva la configuración de Kamal y el Dockerfile como **opción futura**, pero el pipeline activo es Cloudflare Pages únicamente. Esta config no se eliminará.
 
 **Total de problemas encontrados:** 14 (5 críticos, 4 importantes, 5 menores)
-**Problemas resueltos en la sesión:** 4 (más 1 falso positivo detectado) + 5 resueltos en sesión posterior (6, 8, 9, 11, 13)
+**Problemas resueltos en la sesión:** 4 (más 1 falso positivo detectado) + 5 resueltos en commit `97800ea` (6, 8, 9, 11, 13) + 2 resueltos en sesión actual (3, 12)
 **Tiempo estimado para corregir los restantes:** ~30 minutos
 **Veredicto:** vale la pena mantener este enfoque; los problemas son corregibles.
 
@@ -49,7 +49,7 @@ push a main
 | 9 | `config.assets.compile = true` en prod | ✅ Resuelto | (sesión actual) |
 | 10 | Falta `ruby "X.Y.Z"` en Gemfile | ✅ Resuelto | `36eb75d` |
 | 11 | Reloader de Markdown no invalida cache | ✅ Resuelto | (sesión actual) |
-| 12 | `to_time_preserves_timezone` deprecated | ⏳ Pendiente | — |
+| 12 | `to_time_preserves_timezone` deprecated en Rails 8.1 | ✅ Resuelto | (sesión actual) |
 | 13 | `Parkfile` no maneja `_uploads` vacío | ✅ Resuelto | (sesión actual) |
 | 14 | Hooks `.sample` no invocados | 🚫 Eliminado del scope | — |
 
@@ -177,24 +177,27 @@ git add Gemfile.lock
 
 ---
 
-### 5. ✅ `robots.txt` incompleto — RESUELTO (fix alternativo)
+### 5. ✅ `robots.txt` incompleto — RESUELTO (fix completo)
 
-**Archivos:** `public/robots.txt` (eliminado), `app/views/robots/robots.text.erb` (sin cambios)
+**Archivos:** `public/robots.txt` (eliminado), `app/views/robots/robots.text.erb` (actualizado)
 
-**Problema original:** `app/views/robots/robots.text.erb` no tenía `User-agent: *` ni `Allow: /`.
+**Problema original:** `app/views/robots/robots.text.erb` no tenía `User-agent: *` ni `Allow: /`. Además, existía un `public/robots.txt` estático (99 bytes) que se copiaba a `build/` **DESPUÉS** del build de Parklife, pisando el `robots.txt` dinámico.
 
-**Causa raíz descubierta durante la sesión:** existía un `public/robots.txt` estático (99 bytes, solo un comentario de Rails) que se copiaba a `build/` **DESPUÉS** del build de Parklife, pisando el `robots.txt` dinámico. Por eso el `build/robots.txt` solo contenía el comentario.
+**Solución aplicada (en 2 partes):**
 
-**Solución aplicada:** se eliminó `public/robots.txt`. Ahora el dinámico de `app/views/robots/robots.text.erb` se usa correctamente y produce:
+1. Se eliminó `public/robots.txt` para que el dinámico no se pisara.
+2. Se actualizó `app/views/robots/robots.text.erb` con:
 
-```txt
-Sitemap:
-https://resagar.com/sitemap
+```erb
+User-agent: *
+Allow: /
+
+Sitemap: https://resagar.com/sitemap.xml
 ```
 
-**Pendiente menor (no crítico):** agregar `User-agent: *` y `Allow: /` al `app/views/robots/robots.text.erb` para mejor SEO.
+**Cambio clave:** se probó primero con `url_for(...)` pero el helper no agregaba la extensión `.xml` porque la ruta tiene `defaults: { format: :xml }`. Se decidió hardcodear la URL ya que el dominio es fijo (`https://resagar.com`) y la ruta es conocida. Si en el futuro cambia el dominio, se actualiza en este único lugar.
 
-**Commit:** `36eb75d`
+**Commits:** `36eb75d` (paso 1) + sesión actual (paso 2)
 
 ---
 
@@ -305,11 +308,20 @@ Ahora, al detectar cambios en archivos Markdown, las rutas se recargan **y** la 
 
 ---
 
-### 12. `config.active_support.to_time_preserves_timezone = :zone`
+### 12. ✅ `config.active_support.to_time_preserves_timezone` deprecado en Rails 8.1 — RESUELTO
 
-**Archivo:** `config/application.rb` (línea 18)
+**Archivo:** `config/application.rb` (línea 18, eliminada)
 
-Es válido pero revisar las release notes de Rails 8 para confirmar que sigue siendo la opción recomendada.
+**Problema original:** la línea `config.active_support.to_time_preserves_timezone = :zone` está **deprecada en Rails 8.1**. Según las release notes oficiales:
+
+> *"Deprecate `config.active_support.to_time_preserves_timezone`."*
+> *"The new default value is `:zone`."*
+
+A partir de Rails 8.1 el comportamiento es forzado y no se puede configurar. El default ya es `:zone`, que es lo que estaba configurado.
+
+**Solución aplicada:** se eliminó la línea de `config/application.rb`. El comportamiento de Rails 8.1 es exactamente el que se buscaba.
+
+**Commit:** sesión actual (próximo)
 
 ---
 
