@@ -31,7 +31,11 @@ Parklife::Application.prepend(Module.new do
     super
 
     FileUtils.mv(Rails.application.root.join("public/assets"), Rails.application.root.join("build/assets"))
-    FileUtils.cp_r(Rails.application.root.join("_uploads/."), Rails.application.root.join("build/uploads"))
+
+    uploads_src = Rails.application.root.join("_uploads")
+    if uploads_src.exist?
+      FileUtils.cp_r(uploads_src.to_s + "/.", Rails.application.root.join("build/uploads").to_s)
+    end
 
     duration = Time.now - start
     pages_built = crawler.instance_variable_get(:@visited).size
@@ -45,6 +49,6 @@ Parklife::Utils.prepend(Module.new do
     super
   rescue => e
     # sometimes there is an `a` element without a `href` attributes
-    puts "#{e}: #{e.message}"
+    warn "[Parklife] scan_for_links error: #{e.class}: #{e.message}"
   end
 end)

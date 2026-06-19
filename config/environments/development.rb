@@ -12,6 +12,7 @@ Rails.application.configure do
                         "_pages" => [ "md", "markdown" ]
                                                     }) do
     Rails.application.reload_routes!
+    Post.instance_variable_set(:@cache, nil) if defined?(Post)
   end
 
   # Do not eager load code on boot.

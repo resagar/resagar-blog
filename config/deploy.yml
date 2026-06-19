@@ -1,3 +1,7 @@
+# ⚠️ Este archivo contiene valores placeholder.
+# Solo se usa si se reactiva Kamal. Actualmente el deploy
+# real es via Cloudflare Pages (ver .github/workflows/ci.yml).
+
 # Name of your application. Used to uniquely configure containers.
 service: resagar_blog
 
@@ -61,12 +65,10 @@ aliases:
   logs: app logs -f
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
 
-
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
   - "resagar_blog_storage:/rails/storage"
-
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
 # hitting 404 on in-flight requests. Combines all files from new and old
