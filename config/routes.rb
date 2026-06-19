@@ -28,5 +28,5 @@ Rails.application.routes.draw do
 
   get "feed", to: "robots#feed", as: :feed, format: :xml, defaults: { format: :xml }
   get "robots", to: "robots#robots", as: :robots, format: :txt, defaults: { format: :txt }
-  get "sitemap", to: "robots#sitemap", as: :sitemap, format: :xml, defaults: { format: :xml }
+  get "sitemap", to: "robots#sitemap", as: :sitemap, format: true
 end

@@ -183,7 +183,7 @@ git add Gemfile.lock
 
 **Problema original:** `app/views/robots/robots.text.erb` no tenía `User-agent: *` ni `Allow: /`. Además, existía un `public/robots.txt` estático (99 bytes) que se copiaba a `build/` **DESPUÉS** del build de Parklife, pisando el `robots.txt` dinámico.
 
-**Solución aplicada (en 2 partes):**
+**Solución aplicada (en 3 partes):**
 
 1. Se eliminó `public/robots.txt` para que el dinámico no se pisara.
 2. Se actualizó `app/views/robots/robots.text.erb` con:
@@ -192,12 +192,14 @@ git add Gemfile.lock
 User-agent: *
 Allow: /
 
-Sitemap: https://resagar.com/sitemap.xml
+Sitemap: <%= sitemap_url(format: :xml) %>
 ```
 
-**Cambio clave:** se probó primero con `url_for(...)` pero el helper no agregaba la extensión `.xml` porque la ruta tiene `defaults: { format: :xml }`. Se decidió hardcodear la URL ya que el dominio es fijo (`https://resagar.com`) y la ruta es conocida. Si en el futuro cambia el dominio, se actualiza en este único lugar.
+3. Se cambió `config/routes.rb` línea 31 de `format: :xml, defaults: { format: :xml }` a `format: true` para que el helper sí agregue la extensión `.xml` a la URL.
 
-**Commits:** `36eb75d` (paso 1) + sesión actual (paso 2)
+**Por qué se necesitó el paso 3:** con `format: :xml` y `defaults: { format: :xml }`, Rails interpreta que el formato es fijo y no lo agrega a la URL generada. Con `format: true`, el helper sabe que la URL debe incluir la extensión del formato.
+
+**Commits:** `36eb75d` (paso 1) + sesión actual (pasos 2 y 3)
 
 ---
 
