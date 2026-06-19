@@ -15,7 +15,6 @@ module ResagarBlog
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
-    config.active_support.to_time_preserves_timezone = :zone
     config.secret_key_base = "0"
     config.middleware.use Rack::Static,
                           urls: [ "/uploads" ],
