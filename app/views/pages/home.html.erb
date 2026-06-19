@@ -1,4 +1,5 @@
-<% provide :title, "Rene Garcia – Ruby on Rails Developer" %>
+<% provide :title,
+"Rene Garcia - Developer, Escritor, Padre, Neurodivergente, Soloprenuer" %>
 <% provide :description,
 "Blog sobre Rails, indie hacking y desarrollo freelance. Construyo en público y comparto lo que aprendo." %>
 <% provide :og_image, "https://mugshotbot.com/m/5YypF97U" %>
@@ -12,11 +13,18 @@
   ) %>
   <section class="flex flex-col max-w-md space-y-4">
     <h1 class="text-4xl font-bold tracking-tight"><span class="block">Hola! Soy Rene Garcia,</span>
-      <span class="text-accent">Ruby On Rails</span>
-      Developer.</h1>
-    <h2 class="text-xl opacity-60">Construyo, aprendo, falló, y sigo adelante. Aquí escribo sobre cómo uso
-      Rails para crear productos, monetizar ideas y vivir del desarrollo.
-      Freelancer disponible si quieres que haga realidad tu idea.
+      Soy
+      <span
+        class="text-accent"
+        data-controller="typed"
+        data-typed-words-value='["Developer","Padre","Escritor","Neurodivergente","Solopreneur"]'
+        data-typed-colors-value='["#60a5fa","#34d399","#fbbf24","linear-gradient(90deg, #f472b6, #a78bfa, #60a5fa)","#f97316"]'
+        aria-label="Developer, Padre, Escritor, Neurodivergente, Solopreneur"
+      >Developer</span></h1>
+    <h2 class="text-xl opacity-60">
+      Escribo sobre como estoy construyendo un negocio digital en solitario,
+      como uso y lucho con mi mente caotica con 2e (TDAH y AACC) y como
+      equilibro todo esto para ser un padre presente.
     </h2>
     <div class="flex flex-row justify-baseline items-center space-x-5">
       <%= link_to "https://x.com/rsamuelgarcia", target: "_blank", rel: "noopener noreferrer" do %>
@@ -34,23 +42,6 @@
           "
         ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
 
-      <% end %>
-      <%= link_to "https://bsky.app/profile/resagar.com", target: "_blank", rel: "noopener noreferrer" do %>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="
-            icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky size-6
-            opacity-50 hover:opacity-100
-          "
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path
-            d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z"
-          /></svg>
       <% end %>
       <%= link_to "https://www.linkedin.com/in/resagar-backend-developer/", target: "_blank", rel: "noopener noreferrer" do %>
         <svg

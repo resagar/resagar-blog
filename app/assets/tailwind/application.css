@@ -12,3 +12,21 @@
 .links-to-about {
   @apply flex flex-row items-center justify-baseline gap-2 hover:opacity-60;
 }
+
+/* Typewriter caret */
+.typed-caret {
+  display: inline-block;
+  margin-left: 1px;
+  font-weight: bold;
+  animation: typed-blink 1s steps(2) infinite;
+}
+
+@keyframes typed-blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typed-caret {
+    animation: none;
+  }
+}
