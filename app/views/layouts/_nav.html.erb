@@ -26,13 +26,10 @@
         "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(posts_list_path)}" %>
     </li>
     <li class="size-full flex flex-row justify-center items-center">
-      <%= link_to "Newsletter",
-      "https://www.newsletter.resagar.com",
-      class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
+      <%= link_to "Now",
+      now_path,
+      class: "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(now_path)}" %>
     </li>
-    <li class="size-full flex flex-row justify-center items-center"><%= link_to "Servicios",
-      "#",
-      class: "px-3 h-full flex flex-row items-center hover:text-accent" %></li>
   </ul>
   <div class="tooltip tooltip-right" data-tip="Rss">
     <%= link_to feed_url(format: :xml), class: "btn btn-outline border-base-300 shadow-md rounded-full" do %>
