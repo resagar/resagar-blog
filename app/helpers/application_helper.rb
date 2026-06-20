@@ -12,4 +12,23 @@ module ApplicationHelper
 
     ActiveSupport::Inflector.transliterate(string)
   end
+
+  # Devuelve la URL canonica de la pagina actual.
+  # Casos especiales:
+  #   - Posts paginados (pagina > 1): apunta a /posts
+  #   - Post individual: usa post_path para evitar el .html
+  #   - Resto: self-referential con el path actual
+  def canonical_url
+    base = Rails.application.config.x.site_url
+
+    if @page.is_a?(Integer) && @page > 1
+      return "#{base}/posts"
+    end
+
+    if controller_name == "posts" && action_name == "show" && @post
+      return "#{base}#{post_path(@post)}"
+    end
+
+    "#{base}#{request.path}"
+  end
 end
