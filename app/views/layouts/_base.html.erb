@@ -12,7 +12,7 @@
     <meta property="og:description" content="<%= yield(:description) %>">
     <meta property="og:image" content="<%= yield(:og_image) %>">
     <meta property="og:image:alt" content="Rene Garcia — Software, escritura y paternidad neurodivergente">
-    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:url" content="<%= Rails.application.config.x.site_url %><%= request.path %>">
     <meta property="og:type" content="<%= yield(:og_type) %>">
     <meta property="og:site_name" content="Rene Garcia">
     <meta property="og:locale" content="es_ES">
@@ -23,6 +23,23 @@
     <meta name="twitter:title" content="<%= yield(:title) %>">
     <meta name="twitter:description" content="<%= yield(:description) %>">
     <meta name="twitter:image" content="<%= yield(:og_image) %>">
+
+    <!-- Schema.org WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rene Garcia — Software, escritura y paternidad neurodivergente",
+      "url": "<%= Rails.application.config.x.site_url %>",
+      "description": "Developer, escritor y padre con TDAH y AACC. Construyo un negocio en software y escritura con una mente que es mi mayor ventaja y mi peor enemiga.",
+      "inLanguage": "es",
+      "author": {
+        "@type": "Person",
+        "name": "Rene Garcia",
+        "url": "<%= Rails.application.config.x.site_url %>"
+      }
+    }
+    </script>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

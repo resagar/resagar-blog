@@ -20,3 +20,32 @@
   <% end %>
   <%= render "post", post: @post %>
 </div>
+
+<!-- Schema.org BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "<%= @post.title %>",
+  "description": "<%= @post.summary %>",
+  "datePublished": "<%= @post.published_at.iso8601 %>",
+  "url": "<%= post_url(@post) %>",
+  "inLanguage": "es",
+  "author": {
+    "@type": "Person",
+    "name": "Rene Garcia",
+    "url": "<%= Rails.application.config.x.site_url %>"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Rene Garcia",
+    "url": "<%= Rails.application.config.x.site_url %>"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "<%= post_url(@post) %>"
+  },
+  "image": "<%= @post.og_image %>",
+  "keywords": "<%= @post.tags.join(', ') if @post.tags %>"
+}
+</script>

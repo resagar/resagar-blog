@@ -11,6 +11,10 @@ module ResagarBlog
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 
+    # Site URL — centralizado para que cambiar de dominio sea 1 línea.
+    # Override con la variable de entorno SITE_URL en deploys/producción.
+    config.x.site_url = ENV.fetch("SITE_URL", "https://resagar.com")
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
