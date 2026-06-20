@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     route_for :_tag, { tag_slug: tag.parameterize }.merge(options)
   end
 
-  get "feed", to: "robots#feed", as: :feed, format: :xml, defaults: { format: :xml }
-  get "robots", to: "robots#robots", as: :robots, format: :txt, defaults: { format: :txt }
+  get "feed", to: "robots#feed", as: :feed, format: true
+  get "robots", to: "robots#robots", as: :robots, format: true
   get "sitemap", to: "robots#sitemap", as: :sitemap, format: true
 end
