@@ -21,11 +21,15 @@ Rails.application.routes.draw do
     route_for :slugged_post, { year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug }.merge(options)
   end
 
-  get "tags", to: "pages#tags"
-  get "posts/tags/:tag_slug", to: "posts#tag", as: :_tag
-  direct :tag do |tag, options|
-    route_for :_tag, { tag_slug: tag.parameterize }.merge(options)
-  end
+  # === Tag routes (deshabilitadas temporalmente) ===
+  # Para reactivar el sistema de tags completo, descomentar las 3 líneas de abajo
+  # y volver a cambiar `tag` por `link_to tag, tag_path(tag.parameterize)` en
+  # app/views/posts/_post.html.erb línea 13
+  # get "tags", to: "pages#tags"
+  # get "posts/tags/:tag_slug", to: "posts#tag", as: :_tag
+  # direct :tag do |tag, options|
+  #   route_for :_tag, { tag_slug: tag.parameterize }.merge(options)
+  # end
 
   get "feed", to: "robots#feed", as: :feed, format: true
   get "robots", to: "robots#robots", as: :robots, format: true
