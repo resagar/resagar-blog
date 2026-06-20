@@ -8,13 +8,16 @@ require_relative 'config/environment'
 
 Parklife.application.configure do |config|
   config.on_404 = :warn
+  config.nested_index = false
   config.base = "https://resagar.com"
 end
 
 Parklife.application.routes do
   root crawl: true
 
-  
+
+
+
   get "/feed.xml"
   get "/sitemap.xml"
   get "/robots.txt"
