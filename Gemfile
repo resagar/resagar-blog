@@ -69,7 +69,7 @@ end
 
 gem "parklife", "~> 0.9.0"
 
-gem "rouge", "~> 4.6"
+gem "rouge", "~> 5.0"
 
 gem "kramdown-parser-gfm", "~> 1.1"
 
