@@ -12,6 +12,9 @@ class RobotsController < ApplicationController
     @entries = []
 
     @entries << SitemapEntry.new(loc: root_url)
+    @entries << SitemapEntry.new(loc: about_url)
+    @entries << SitemapEntry.new(loc: now_url)
+    @entries << SitemapEntry.new(loc: tags_url)
 
     @entries += Post.all.map do |post|
       SitemapEntry.new(loc: post_url(post))
