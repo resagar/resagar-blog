@@ -4,12 +4,6 @@
 <% provide :og_image, "https://mugshotbot.com/m/5YypF97U" %>
 <% provide :og_type, "website" %>
 
-<% if @page == 1
-  provide :whole_title, "Resagar : A lost and found"
-else
-  provide :title, "Resagar : A lost and found"
-end %>
-
 <% if @page > 1 %>
   <% content_for :head do %>
     <meta name="robots" content="noindex, follow">
