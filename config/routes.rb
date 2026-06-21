@@ -34,5 +34,7 @@ Rails.application.routes.draw do
   get "feed", to: "robots#feed", as: :feed, format: true
   get "robots", to: "robots#robots", as: :robots, format: true
   get "sitemap", to: "robots#sitemap", as: :sitemap, format: true
-  get "/404.html", to: "errors#not_found"
+
+  # Catch-all 404 - DEBE ir al final (matchea cualquier URL no encontrada)
+  match "*path", to: "errors#not_found", via: :all
 end

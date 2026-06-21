@@ -55,3 +55,15 @@ Parklife::Utils.prepend(Module.new do
     warn "[Parklife] scan_for_links error: #{e.class}: #{e.message}"
   end
 end)
+
+# Custom NotFound responder: after the default behavior (skip/warn/raise),
+# save the 404 response to disk so it's served by Cloudflare Pages for any
+# unmatched URL. This is needed because Parklife's default NotFound responder
+# doesn't call build.add.
+require 'parklife/responder/not_found'
+Parklife::Responder::NotFound.prepend(Module.new do
+  def call(route, response)
+    super
+    crawler.build.add(route, response)
+  end
+end)
