@@ -46,6 +46,6 @@
     "@id": "<%= post_url(@post) %>"
   },
   "image": "<%= @post.og_image %>",
-  "keywords": "<%= @post.tags.join(', ') if @post.tags %>"
+  "keywords": <%= raw @post.tags.to_json if @post.tags&.any? %>
 }
 </script>
