@@ -1,0 +1,26 @@
+<% provide :title, "Pagina no encontrada - Rene Garcia" %>
+<% provide :description, "La pagina que buscas no existe. Vuelve al inicio o explora otros articulos del blog." %>
+<% provide :og_type, "website" %>
+
+<% content_for :head do %>
+  <meta name="robots" content="noindex, nofollow">
+<% end %>
+
+<section class="text-center py-16 max-w-2xl mx-auto">
+  <h1 class="text-7xl font-bold font-sans text-accent">404</h1>
+  <p class="text-2xl font-semibold mt-6">Pagina no encontrada</p>
+  <p class="text-lg opacity-70 mt-3">
+    Lo que buscas no existe o fue movido a otra URL.
+  </p>
+
+  <div class="flex flex-row justify-center gap-4 mt-10">
+    <%= link_to "<- Volver al inicio", root_path, class: "btn btn-primary" %>
+    <%= link_to "Ver articulos", posts_list_path, class: "btn btn-outline border-base-300" %>
+  </div>
+
+  <p class="text-sm opacity-50 mt-12">
+    Si llegaste desde un link externo,
+    <%= mail_to "rsamuelgarcia@gmail.com", "avisame", class: "link link-hover" %>
+    para que lo corrija.
+  </p>
+</section>
