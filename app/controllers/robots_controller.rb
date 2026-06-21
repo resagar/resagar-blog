@@ -17,7 +17,7 @@ class RobotsController < ApplicationController
     @entries << SitemapEntry.new(loc: posts_list_url)
 
     @entries += Post.all.map do |post|
-      SitemapEntry.new(loc: post_url(post))
+      SitemapEntry.new(loc: post_url(post), lastmod: post.published_at)
     end
   end
 
