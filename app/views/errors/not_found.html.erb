@@ -1,10 +1,12 @@
 <% provide :title, "Pagina no encontrada - Rene Garcia" %>
 <% provide :description,
   "La pagina que buscas no existe. Vuelve al inicio o explora otros articulos del blog." %>
-<% provide :og_type, "website" %>
 
 <% content_for :head do %>
   <meta name="robots" content="noindex, nofollow">
+  <meta property="og:url" content="<%= root_url %>">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="">
 <% end %>
 
 <section class="text-center py-16 max-w-2xl mx-auto">

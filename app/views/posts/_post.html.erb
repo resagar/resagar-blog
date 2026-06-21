@@ -1,11 +1,11 @@
-<article class="prose" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="prose">
   <header>
-    <h1 itemprop="name headline">
+    <h1>
       <%= markdownify(post.title) %>
     </h1>
     <p>
       <% if post.published_at %>
-        <time datetime="<%= post.published_at.iso8601 %>" itemprop="datePublished"><%= post.published_at.strftime("%B %-d, %Y") %></time>
+        <time datetime="<%= post.published_at.iso8601 %>"><%= post.published_at.strftime("%B %-d, %Y") %></time>
       <% end %>
 
       <% if post.tags.any? %>
@@ -15,7 +15,7 @@
     </p>
   </header>
 
-  <div itemprop="articleBody">
+  <div>
     <%= post.content %>
   </div>
 </article>

@@ -1,7 +1,8 @@
-<% provide :title, "Quien soy — Rene Garcia" %>
+<% provide :title, "#{@page.title} — Rene Garcia" %>
 <% provide :description,
 "Backend developer con 7 anos de experiencia, especializado en Ruby on Rails. Escritor, Padre, neurodivergente (TDAH + AACC), emprendedor solitario. Esta es mi historia." %>
 <% provide :og_image, "https://mugshotbot.com/m/v8N2s1qN" %>
+<% provide :og_image_alt, "Foto de Rene Garcia — Backend developer, escritor y padre neurodivergente" %>
 <% provide :og_type, "website" %>
 
 <section class="grid grid-cols-[1fr_auto] gap-12">
@@ -94,6 +95,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "<%= "#{Rails.application.config.x.site_url}/about#person" %>",
   "name": "Rene Garcia",
   "jobTitle": "Software Developer, Escritor, Padre",
   "url": "<%= about_url %>",

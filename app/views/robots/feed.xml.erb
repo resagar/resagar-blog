@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Resagar</title>
-    <description>A Lost and Found</description>
+    <title>Rene Garcia — Software, escritura y paternidad neurodivergente</title>
+    <description>Software, escritura y paternidad neurodivergente. Historias de un indie hacker con TDAH y AACC: Ruby on Rails, emprendimiento solitario y vida como padre neurodivergente.</description>
     <link><%= root_url %></link>
     <atom:link href="<%= feed_url(format: :xml) %>" rel="self" type="application/rss+xml"/>
+    <language>es-ES</language>
+    <lastBuildDate><%= Time.current.rfc822 %></lastBuildDate>
     <pubDate><%= (@posts.first&.published_at || Time.current).rfc822 %></pubDate>
+    <managingEditor>rsamuelgarcia@gmail.com (Rene Garcia)</managingEditor>
+    <webMaster>rsamuelgarcia@gmail.com (Rene Garcia)</webMaster>
+    <copyright>© <%= Date.current.year %> Rene Garcia. All rights reserved.</copyright>
     <generator>Ruby on Rails</generator>
+    <image>
+      <url><%= "#{Rails.application.config.x.site_url}/icon.png" %></url>
+      <title>Rene Garcia</title>
+      <link><%= root_url %></link>
+    </image>
     <% @posts.each do |post| %>
       <item>
         <title><%= h post.title %></title>

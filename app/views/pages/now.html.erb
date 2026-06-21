@@ -2,12 +2,14 @@
 <% provide :description,
 "Que estoy construyendo, aprendiendo y en que estoy enfocado ahora mismo como indie hacker, padre y neurodivergente (TDAH + AACC)" %>
 <% provide :og_image, "https://mugshotbot.com/m/5YypF97U" %>
+<% provide :og_image_alt, "Foto de Rene Garcia — software developer, escritor y padre neurodivergente" %>
 <% provide :og_type, "website" %>
 
 <article class="prose max-w-3xl mx-auto py-8">
   <header class="pb-6 not-prose">
     <p class="text-sm opacity-50 font-sans mb-2">
-      <%= Time.current.strftime("Ultima actualizacion: %-d de %B, %Y") %>
+      <% months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"] %>
+      Ultima actualizacion: <%= Time.current.day %> de <%= months[Time.current.month - 1] %>, <%= Time.current.year %>
     </p>
     <h1 class="text-5xl font-sans font-bold"><%= @page.title %></h1>
   </header>

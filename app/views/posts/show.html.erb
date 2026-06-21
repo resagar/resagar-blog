@@ -1,6 +1,7 @@
 <% provide :title, @post.title %>
 <% provide :description, @post.summary %>
 <% provide :og_image, @post.og_image %>
+<% provide :og_image_alt, "Imagen del articulo: #{@post.title}" %>
 <% provide :og_type, "article" %>
 
 <div class="grid grid-cols-[auto_1fr] items-baseline space-x-21.5">
@@ -29,6 +30,7 @@
   "headline": "<%= @post.title %>",
   "description": "<%= @post.summary %>",
   "datePublished": "<%= @post.published_at.iso8601 %>",
+  "dateModified": "<%= @post.published_at.iso8601 %>",
   "url": "<%= post_url(@post) %>",
   "inLanguage": "es",
   "author": {

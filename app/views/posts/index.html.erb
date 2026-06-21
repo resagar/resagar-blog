@@ -2,11 +2,16 @@
 <% provide :description,
 "Todos los artículos del blog: programación, Ruby on Rails, Hotwire, herramientas para developers y mi camino como emprendedor solitario." %>
 <% provide :og_image, "https://mugshotbot.com/m/5YypF97U" %>
+<% provide :og_image_alt, "Foto de Rene Garcia — software developer, escritor y padre neurodivergente" %>
 <% provide :og_type, "website" %>
 
-<% if @page > 1 %>
-  <% content_for :head do %>
+<% content_for :head do %>
+  <% if @page > 1 %>
     <meta name="robots" content="noindex, follow">
+    <link rel="prev" href="<%= @page == 2 ? posts_list_url : posts_path(page: @page - 1) %>">
+  <% end %>
+  <% if @page < (Post.all.size.to_f / @limit).ceil %>
+    <link rel="next" href="<%= posts_path(page: @page + 1) %>">
   <% end %>
 <% end %>
 <div class="pl-6 mb-15 max-w-2xl flex flex-col space-y-5">
@@ -21,9 +26,9 @@
 
 <div class="d-flex justify-content-between mb-5">
   <% if @page > 1 %>
-    <a href="<%= posts_path(page: @page - 1) %>" class="btn btn-outline-primary">Newer posts</a>
+    <a href="<%= posts_path(page: @page - 1) %>" class="btn btn-outline-primary">Articulos mas recientes</a>
   <% end %>
   <% if @page < (Post.all.size.to_f / @limit).ceil %>
-    <a href="<%= posts_path(page: @page + 1) %>" class="btn btn-outline-primary">Older posts</a>
+    <a href="<%= posts_path(page: @page + 1) %>" class="btn btn-outline-primary">Articulos anteriores</a>
   <% end %>
 </div>
