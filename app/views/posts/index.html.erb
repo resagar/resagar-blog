@@ -1,6 +1,6 @@
 <% provide :title, "Artículos — Rene Garcia" %>
 <% provide :description,
-"Todos los artículos del blog: programación, Ruby on Rails, Hotwire, herramientas para developers y mi camino como emprendedor solitario." %>
+"Escribo sobre construir software y negocios siendo neurodivergente. TDAH, AACC, SaaS y autonomía — desde adentro, no desde el manual." %>
 <% provide :og_image, "https://mugshotbot.com/m/5YypF97U" %>
 <% provide :og_image_alt, "Foto de Rene Garcia — software developer, escritor y padre neurodivergente" %>
 <% provide :og_type, "website" %>
@@ -16,9 +16,9 @@
 <% end %>
 <div class="pl-6 mb-15 max-w-2xl flex flex-col space-y-5">
 
-  <h1 class="text-4xl font-bold">Mis articulos sobre Programacion, Ruby on Rails, Hotwire, Tools linux y mi
-    camino como emprendedor solitario.</h1>
-  <h2 class="prose prose-2xl">Empiece con mi ultimo articulo publicado.</h2>
+  <h1 class="text-4xl font-bold">Lo que escribo cuando la neurodivergencia se cruza
+  con el código, los negocios y la vida real.</h1>
+  <h2 class="prose prose-2xl">Todo lo que nadie escribe porque implica admitir que no lo tienes resuelto.</h2>
 </div>
 <div class="flex flex-col max-w-2xl space-y-5">
   <%= render partial: "post_card", collection: @posts, as: :post %>

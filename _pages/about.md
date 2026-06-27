@@ -1,19 +1,27 @@
 ---
-title: "Soy Rene Garcia, Experto en Ruby on Rails y emprendedor solitario."
+title: "¿Quien soy?"
 ---
 
-Luego de algunas decepciones laborales decidi tomar las riendas de mi carrera en mis manos. De mis primeras decisiones estuvo el elegir rails como herramienta principal para el desarrollo de software y comenzar a recorrer el camino de emprendedor solitario.
+No tuve un buen padre. Cuando mi esposa quedo embarazada no quería repetir la misma historia. Necesitaba entender mi mente. El diagnostico llego sin manual.
 
-Tengo 6 años de experiencia como backend developer, la verdad el backend me encanta, lo ame desde la primera vez que estuve en contacto con el sector. He hecho software usando lenguaje como typescript, Go e incluso PHP, ma recientemente decidi salirme de las modas y los tradicional para irme por lo practico y disruptivo, cosas que pegan mas con mi personalidad y decidi comenzar a usar Ruby y Rails como herramientas principales. Tambien me llama la atencion Elixir y Phoenix que tambien tienen la misma filosofia.
+Siempre sentí que no encajaba en ningún lado. Solo me sentía cómodo con las computadoras. Mi papá era programador. Me interese en lo que el hacía desde pequeño. El me dio un libro para que aprendiera. Lo hice. No supo qué hacer conmigo.
 
-En el tiempo que estuve trabajando en empresas tuve varias malas experiencias, dos de ellas que fueron determinantes y me llevaron a querer ser emprendedor independiente fueron que se ponia en duda sin razon mi trabajo lo que deribo que se me pusiera un supervisor directo el mismo tampoco entendia porque se ponia en duda mi trabajo, la otra mala experiencia fue que trabaje en una empresa donde dejaron de pagarme durante varios meses, lo ironico es que cuando baje el rendimiento y comence a exigir mi pago inmeditamente me señararon que debia seguir trabajando igual porque era mi responsabilidad. Estas experiencias me marcaron bastante, lo que me llevo a ir por otro camino.
+De adulto retome la programación. Venezuela se estaba cayendo a pedazos. Estaba casado. El dinero no alcanzaba. Necesitaba conseguir trabajo remoto. Durante un año aprendí lo necesario. Lo logre.
 
-Tambien soy padre de una hermosa niña, ella es mi razon, ella ha cambiado mi vida por completo, todo esto lo hago por ella y para ella. Quiero darle la vida que no me dieron a mi.
+Programar me hacia sentir poderoso. Luego se convirtió en pesadilla. Entre en una empresa. Todo era urgente. Me enferme de la piel. Cambie de empresa. Mas dinero. mismo estrés.
 
-En este blog escribo sobre lo que me gusta. Desarrollo de software y emprendimiento en solitario. Tambien se colaran algunos articulos relacionados con mi vida personal y otros temas. Cabe destacar que no uso IA para nada, cada articulo lleva mi propia voz, como si estuvieramos hablando en persona. Algunos seran criticas que terminaran en reflexion interna, mi idea es ser lo mas expontaneo posible, pues valoro el contenido puro y natural, este blog es para personas que la valoran lo mismo que yo.
+Me entere que tenia TDAH y altas capacidades. Volví a intentar trabajar para una empresa. Hice algunos cambios para sentirme mejor. Ninguno funcionó.
 
-Tengo mucho camino que recorrer, apenas estoy empezando. Espero puedas acompañarme en este viaje.
+Ser padre me revelo una habilidad nueva. Escribir. Tenía una voz definida sin saberlo.
 
-Tengo una newsletter donde hablo tambien sobre emprendimiento en solitario.
+La paternidad me hizo replantearme. Trabaje en una empresa exigente. No podía siquiera bañar a mi hija. Llevaba tres dias sin hacerlo. Me comenzó a llamar insistentemente. Me rompió el corazón. Deje lo que estaba haciendo. La bañe.
 
-[Suscribete aqui](https://www.newsletter.resagar.com)
+No quería que volviera a suceder. Decidí montar un negocio con lo que tengo. código y escritura. No solo quiero ganar dinero. Quiero tiempo. 
+
+Este blog no intenta ser una guía de cómo ser exitoso siendo neurodivergente.
+
+Soy yo intentando lograrlo.
+
+Bienvenido.
+
+*— René García*
