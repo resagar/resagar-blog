@@ -5,18 +5,18 @@
 <% provide :og_image_alt, "Foto de Rene Garcia — software developer, escritor, padre, emprendedor y neurodivergente" %>
 <% provide :og_type, "website" %>
 
-<header class="flex flex-row justify-around">
+<header class="flex flex-col md:flex-row md:justify-around items-center md:items-start gap-6 md:gap-10">
 
   <%= image_tag(
     "perfil2-576.jpg",
     srcset: { "perfil2-288.jpg" => "1x", "perfil2-576.jpg" => "2x" },
     alt: "Foto de Rene Garcia — software developer, escritor y padre neurodivergente",
-    class: "size-72 rounded-xl object-cover rotate-[-3deg]",
+    class: "size-48 sm:size-56 md:size-64 lg:size-72 rounded-xl object-cover rotate-[-3deg] mx-auto md:mx-0",
     loading: "lazy",
     decoding: "async",
   ) %>
-  <section class="flex flex-col max-w-md space-y-4">
-    <h1 class="text-4xl font-bold tracking-tight"><span class="block">Rene Garcia.
+  <section class="flex flex-col max-w-md space-y-4 text-center md:text-left">
+    <h1 class="text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight"><span class="block">Rene Garcia.
       </span>
       Soy
       <span
@@ -26,12 +26,12 @@
         data-typed-colors-value='["#60a5fa","#34d399","#a78bfa","linear-gradient(90deg, #f472b6, #a78bfa, #60a5fa)"]'
         aria-label="Developer, Escritor, Padre, Neurodivergente"
       >Developer</span></h1>
-    <h2 class="text-xl opacity-60">
+    <h2 class="text-lg sm:text-xl opacity-60">
       Emprendedor solitario en software y escritura. Creo negocios con una
       mente que es mi mayor ventaja (y desventaja). También soy padre y eso lo
       cambia todo.
     </h2>
-    <div class="flex flex-row justify-baseline items-center space-x-5">
+    <div class="flex flex-row flex-wrap justify-center md:justify-start items-center gap-x-5 gap-y-3">
       <%= link_to "https://x.com/rsamuelgarcia", target: "_blank", rel: "noopener noreferrer" do %>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@
     </div>
   </section>
 </header>
-<section class="pt-32">
+<section class="pt-12 sm:pt-16 md:pt-24 lg:pt-32">
   <div
     class="
       card bg-base-200 border border-base-300 shadow-md hover:shadow-lg
@@ -130,7 +130,7 @@
   </div>
 </section>
 
-<section class="pt-16">
+<section class="pt-8 sm:pt-10 md:pt-12 lg:pt-16">
   <div class="flex flex-col space-y-2 mb-6">
     <h2 class="text-2xl font-bold font-sans">Últimos artículos</h2>
     <p class="text-sm opacity-60">Lo más reciente que he escrito.</p>

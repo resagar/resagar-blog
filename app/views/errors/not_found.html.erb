@@ -9,19 +9,19 @@
   <meta property="og:type" content="">
 <% end %>
 
-<section class="text-center py-16 max-w-2xl mx-auto">
-  <h1 class="text-7xl font-bold font-sans text-accent">404</h1>
-  <p class="text-2xl font-semibold mt-6">Pagina no encontrada</p>
-  <p class="text-lg opacity-70 mt-3">
+<section class="text-center py-12 sm:py-14 lg:py-16 max-w-2xl mx-auto px-4 sm:px-6">
+  <h1 class="text-6xl sm:text-7xl font-bold font-sans text-accent">404</h1>
+  <p class="text-xl sm:text-2xl font-semibold mt-6">Pagina no encontrada</p>
+  <p class="text-base sm:text-lg opacity-70 mt-3">
     Lo que buscas no existe o fue movido a otra URL.
   </p>
 
-  <div class="flex flex-row justify-center gap-4 mt-10">
-    <%= link_to "<- Volver al inicio", root_path, class: "btn btn-primary" %>
-    <%= link_to "Ver articulos", posts_list_path, class: "btn btn-outline border-base-300" %>
+  <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-10">
+    <%= link_to "<- Volver al inicio", root_path, class: "btn btn-primary w-full sm:w-auto" %>
+    <%= link_to "Ver articulos", posts_list_path, class: "btn btn-outline border-base-300 w-full sm:w-auto" %>
   </div>
 
-  <p class="text-sm opacity-50 mt-12">
+  <p class="text-sm opacity-50 mt-10 sm:mt-12">
     Si llegaste desde un link externo,
     <%= mail_to "rsamuelgarcia@gmail.com", "avisame", class: "link link-hover" %>
     para que lo corrija.

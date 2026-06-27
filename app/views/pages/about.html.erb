@@ -5,20 +5,20 @@
 <% provide :og_image_alt, "Foto de Rene Garcia — Developer, Escritor, Padre, neurodivergente. Esta es mi historia." %>
 <% provide :og_type, "website" %>
 
-<section class="grid grid-cols-[1fr_auto] gap-12">
-  <article class="prose">
+<section class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12">
+  <article class="prose order-2 lg:order-1">
     <header class="pb-2">
-      <h1 class="text-5xl"><%= @page.title %></h1>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl"><%= @page.title %></h1>
     </header>
     <%= markdownify(@page.content) %>
   </article>
-  <article class="px-10 flex flex-col space-y-7">
-    <div class="flex flex-col justify-center align-baseline space-y-12">
+  <article class="px-0 sm:px-6 lg:px-10 flex flex-col space-y-6 lg:space-y-7 order-1 lg:order-2 items-center lg:items-start text-center lg:text-left">
+    <div class="flex flex-col justify-center items-center lg:items-baseline space-y-6 lg:space-y-12">
       <%= image_tag(
         "perfil2-576.jpg",
         srcset: { "perfil2-288.jpg" => "1x", "perfil2-576.jpg" => "2x" },
         alt: "Foto de Rene Garcia — software developer, escritor y padre neurodivergente",
-        class: "size-72 rounded-3xl rotate-3",
+        class: "size-40 sm:size-52 md:size-64 lg:size-72 rounded-3xl rotate-3",
         loading: "lazy",
         decoding: "async",
       ) %>
@@ -41,7 +41,7 @@
       <% end %>
       <hr class="border-base-300 opacity-70">
     </div>
-    <div class="flex flex-col justify-center items-start space-y-7">
+    <div class="flex flex-col justify-center items-center lg:items-start space-y-5 sm:space-y-7">
       <%= link_to "https://x.com/rsamuelgarcia", target: "_blank", rel: "noopener noreferrer", class:"links-to-about" do %>
         <svg
           xmlns="http://www.w3.org/2000/svg"

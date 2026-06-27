@@ -5,13 +5,13 @@
 <% provide :og_image_alt, "Foto de Rene Garcia — Construyendo un negocio. Aprendiendo a escribir. Siendo padre." %>
 <% provide :og_type, "website" %>
 
-<article class="prose max-w-3xl mx-auto py-8">
+<article class="prose max-w-3xl mx-auto py-8 sm:py-10 lg:py-12 px-4 sm:px-6">
   <header class="pb-6 not-prose">
     <p class="text-sm opacity-50 font-sans mb-2">
       <% months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"] %>
       Ultima actualizacion: <%= Time.current.day %> de <%= months[Time.current.month - 1] %>, <%= Time.current.year %>
     </p>
-    <h1 class="text-5xl font-sans font-bold"><%= @page.title %></h1>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-balance"><%= @page.title %></h1>
   </header>
 
   <%= markdownify(@page.content) %>

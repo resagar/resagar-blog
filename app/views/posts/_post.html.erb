@@ -3,14 +3,14 @@
     <h1>
       <%= markdownify(post.title) %>
     </h1>
-    <p>
+    <p class="flex flex-wrap items-center gap-x-2 gap-y-1">
       <% if post.published_at %>
         <time datetime="<%= post.published_at.iso8601 %>"><%= post.published_at.strftime("%B %-d, %Y") %></time>
       <% end %>
 
       <% if post.tags.any? %>
-        • Tagged
-        <%= to_sentence post.tags.map { |tag| tag } %>
+        <span aria-hidden="true">•</span>
+        <span>Tagged <%= to_sentence post.tags.map { |tag| tag } %></span>
       <% end %>
     </p>
   </header>

@@ -1,35 +1,25 @@
 <footer
   class="
-    footer h-28 sm:footer-horizontal justify-between content-center bg-base-100
-    border-t border-base-200 text-base-content p-4 px-28
+    footer min-h-20 sm:min-h-28 bg-base-100 border-t border-base-200
+    text-base-content p-4 px-4 sm:px-6 lg:px-28
+    sm:footer-horizontal
   "
 >
-  <nav class="w-full flex flex-row justify-between">
-    <ul class=" flex flex-row justify-center items-center font-sans font-medium">
-      <li class="size-full flex flex-row justify-center items-center">
-        <%= link_to "Home",
-        root_path,
-        class: "pr-3 h-full flex flex-row items-center hover:text-accent" %>
-      </li>
-      <li class="size-full flex flex-row justify-center items-center">
-        <%= link_to "About",
-        about_path,
-        class: "pr-3 h-full flex flex-row items-center hover:text-accent" %>
-      </li>
-      <li class="size-full flex flex-row justify-center items-center">
-        <%= link_to "Now",
-        now_path,
-        class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
-      </li>
-      <li class=" size-full flex flex-row justify-center items-center">
-        <%= link_to "Articulos",
-        posts_list_path,
-        class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
-      </li>
-    </ul>
+  <nav class="w-full flex flex-row flex-wrap justify-center sm:justify-start items-center gap-x-3 gap-y-2 font-sans font-medium text-sm">
+    <%= link_to "Home",
+    root_path,
+    class: "pr-3 h-full flex flex-row items-center hover:text-accent" %>
+    <%= link_to "About",
+    about_path,
+    class: "pr-3 h-full flex flex-row items-center hover:text-accent" %>
+    <%= link_to "Now",
+    now_path,
+    class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
+    <%= link_to "Articulos",
+    posts_list_path,
+    class: "px-3 h-full flex flex-row items-center hover:text-accent" %>
   </nav>
-  <aside>
+  <aside class="text-center sm:text-right text-sm opacity-70 w-full sm:w-auto mt-2 sm:mt-0">
     <p>© Rene Garcia, All right reserved</p>
   </aside>
-
 </footer>

@@ -4,8 +4,8 @@
 <% provide :og_image_alt, "Imagen del articulo: #{@post.title}" %>
 <% provide :og_type, "article" %>
 
-<div class="grid grid-cols-[auto_1fr] items-baseline space-x-21.5">
-  <%= link_to posts_list_path, class:"btn btn-outline btn-circle border-base-300 shadow-md" do %>
+<div class="grid grid-cols-1 md:grid-cols-[auto_1fr] md:items-baseline gap-4 md:gap-8 lg:gap-[5.375rem]">
+  <%= link_to posts_list_path, class:"btn btn-outline btn-circle border-base-300 shadow-md self-start md:self-auto min-h-11 min-w-11" do %>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"

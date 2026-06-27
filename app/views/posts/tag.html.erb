@@ -1,26 +1,35 @@
-<% provide :title, "Rene Garcia — Software, escritura y paternidad neurodivergente" %>
+<% provide :title, "Posts tagged with \"#{@tag}\" — Rene Garcia" %>
 <% provide :description,
-"Developer, escritor y padre con TDAH y AACC. Construyo un negocio en software y escritura con una mente que es mi mayor ventaja y mi peor enemiga." %>
-<% provide :og_image, "https://mugshotbot.com/m/5YypF97U" %>
+"Todos los artículos del blog etiquetados con #{@tag}." %>
+<% provide :og_image, image_url("og/home.png") %>
 <% provide :og_type, "website" %>
 
-<h1>Posts tagged with "<%= @tag %>"</h1>
+<article class="prose max-w-3xl mx-auto py-8 sm:py-10 lg:py-12">
+  <header class="not-prose mb-6 sm:mb-8">
+    <p class="text-sm opacity-50 font-sans mb-2">
+      <%= link_to "← Todos los tags", tags_path, class: "text-accent hover:opacity-60" %>
+    </p>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-balance">
+      Posts tagged with "<%= @tag %>"
+    </h1>
+  </header>
 
-<% posts_by_year = @posts.group_by { |post| post.published_at.strftime("%Y") } %>
-<% posts_by_year.each do |year, year_posts| %>
-  <h2><%= year %></h2>
+  <% posts_by_year = @posts.group_by { |post| post.published_at.strftime("%Y") } %>
+  <% posts_by_year.each do |year, year_posts| %>
+    <h2 class="text-2xl sm:text-3xl font-sans font-bold mt-8 sm:mt-10 mb-3 sm:mb-4"><%= year %></h2>
 
-  <% posts_by_month = year_posts.group_by { |post| post.published_at.strftime("%B") } %>
-  <% posts_by_month.each do |month, month_posts| %>
-    <h3 class="h6"><%= month %></h3>
-    <ul>
-      <% month_posts.sort_by(&:published_at).reverse_each do |post| %>
-        <li><%= link_to post.title, post_path(post) %></li>
-      <% end %>
-    </ul>
+    <% posts_by_month = year_posts.group_by { |post| post.published_at.strftime("%B") } %>
+    <% posts_by_month.each do |month, month_posts| %>
+      <h3 class="text-lg sm:text-xl font-sans font-semibold mt-4 sm:mt-6 mb-2"><%= month %></h3>
+      <ul class="list-none pl-0 space-y-1.5">
+        <% month_posts.sort_by(&:published_at).reverse_each do |post| %>
+          <li>
+            <%= link_to post.title, post_path(post), class: "link link-hover text-base sm:text-lg" %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
 
-<p>
-  <%= link_to "← Back to all tags", tags_path %>
-</p>
+  <hr class="my-8 sm:my-10 border-base-300 opacity-30">
+</article>

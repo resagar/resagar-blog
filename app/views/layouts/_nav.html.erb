@@ -2,17 +2,15 @@
   <% unless current_page?(root_path) %>
 
     <%= link_to root_path do %>
-      <picture>
-        <source srcset="<%= image_url("perfil2-80.webp") %>" type="image/webp">
-        <img src="<%= image_url("perfil2-80.jpg") %>" alt="Rene Garcia (inicio)" class="size-10 object-cover rounded-full" loading="lazy" decoding="async">
-      </picture>
+      <%= image_tag("perfil2.jpg", alt: "Rene Garcia (inicio)", class: "size-10 object-cover rounded-full") %>
     <% end %>
   <% else %>
     <div class="size-10"></div>
   <% end %>
+
   <ul
     class="
-      flex flex-row justify-center items-center border border-base-300 rounded-full
+      hidden md:flex flex-row justify-center items-center border border-base-300 rounded-full
       shadow-md px-3 py-0 font-sans font-medium text-sm
     "
   >
@@ -40,6 +38,55 @@
         "px-3 h-full flex flex-row items-center hover:text-accent #{"text-accent" if current_page?(posts_list_path)}" %>
     </li>
   </ul>
+
+  <details class="md:hidden relative">
+    <summary
+      class="
+        btn btn-outline border-base-300 shadow-md rounded-full p-2 min-h-11 min-w-11
+        cursor-pointer list-none [&::-webkit-details-marker]:hidden
+      "
+      aria-label="Abrir menú de navegación"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2 size-5"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0"/><path d="M4 12l16 0"/><path d="M4 18l16 0"/></svg>
+    </summary>
+    <ul
+      class="
+        absolute right-0 top-full mt-2 menu bg-base-100 border border-base-300
+        rounded-box shadow-lg z-50 w-52 p-2 font-sans font-medium text-base
+      "
+    >
+      <li>
+        <%= link_to root_path, class: "rounded-md py-2.5 #{"text-accent" if current_page?(root_path)}" do %>
+          Home
+        <% end %>
+      </li>
+      <li>
+        <%= link_to about_path, class: "rounded-md py-2.5 #{"text-accent" if current_page?(about_path)}" do %>
+          ¿Quién soy?
+        <% end %>
+      </li>
+      <li>
+        <%= link_to now_path, class: "rounded-md py-2.5 #{"text-accent" if current_page?(now_path)}" do %>
+          Now
+        <% end %>
+      </li>
+      <li>
+        <%= link_to posts_list_path, class: "rounded-md py-2.5 #{"text-accent" if current_page?(posts_list_path)}" do %>
+          Articulos
+        <% end %>
+      </li>
+    </ul>
+  </details>
+
   <div class="tooltip tooltip-right" data-tip="Rss">
     <%= link_to feed_url(format: :xml), class: "btn btn-outline border-base-300 shadow-md rounded-full" do %>
       <svg

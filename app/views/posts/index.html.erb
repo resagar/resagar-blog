@@ -2,7 +2,7 @@
 <% provide :description,
 "Escribo sobre construir software y negocios siendo neurodivergente. TDAH, AACC, SaaS y autonomía — desde adentro, no desde el manual." %>
 <% provide :og_image, image_url("og/posts.png") %>
-<% provide :og_image_alt, "Foto de Rene Garcia — Lo que escribo cuando la neurodivergencia se cruza con el codigo, los negocios y la vida real." %>
+<% provide :og_image_alt, "Artículos de Rene Garcia sobre software, negocios y neurodivergencia" %>
 <% provide :og_type, "website" %>
 
 <% content_for :head do %>
@@ -14,21 +14,22 @@
     <link rel="next" href="<%= posts_path(page: @page + 1) %>">
   <% end %>
 <% end %>
-<div class="pl-6 mb-15 max-w-2xl flex flex-col space-y-5">
 
-  <h1 class="text-4xl font-bold">Lo que escribo cuando la neurodivergencia se cruza
+<div class="px-4 sm:px-6 lg:px-0 mb-8 sm:mb-10 lg:mb-15 max-w-2xl flex flex-col space-y-4 sm:space-y-5">
+  <h1 class="text-3xl sm:text-4xl font-bold text-balance">Lo que escribo cuando la neurodivergencia se cruza
   con el código, los negocios y la vida real.</h1>
-  <h2 class="prose prose-2xl">Todo lo que nadie escribe porque implica admitir que no lo tienes resuelto.</h2>
+  <h2 class="prose prose-lg sm:prose-xl">Todo lo que nadie escribe porque implica admitir que no lo tienes resuelto.</h2>
 </div>
-<div class="flex flex-col max-w-2xl space-y-5">
+
+<div class="px-4 sm:px-6 lg:px-0 flex flex-col max-w-2xl space-y-4 sm:space-y-5">
   <%= render partial: "post_card", collection: @posts, as: :post %>
 </div>
 
-<div class="d-flex justify-content-between mb-5">
+<div class="px-4 sm:px-6 lg:px-0 flex flex-col sm:flex-row justify-between gap-3 mb-8 sm:mb-12">
   <% if @page > 1 %>
-    <a href="<%= posts_path(page: @page - 1) %>" class="btn btn-outline-primary">Articulos mas recientes</a>
+    <%= link_to "Articulos mas recientes", posts_path(page: @page - 1), class: "btn btn-outline border-base-300" %>
   <% end %>
   <% if @page < (Post.all.size.to_f / @limit).ceil %>
-    <a href="<%= posts_path(page: @page + 1) %>" class="btn btn-outline-primary">Articulos anteriores</a>
+    <%= link_to "Articulos anteriores", posts_path(page: @page + 1), class: "btn btn-outline border-base-300 sm:ml-auto" %>
   <% end %>
 </div>
