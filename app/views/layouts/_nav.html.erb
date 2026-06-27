@@ -2,7 +2,10 @@
   <% unless current_page?(root_path) %>
 
     <%= link_to root_path do %>
-      <%= image_tag("perfil2.jpg", alt: "Rene Garcia (inicio)", class: "size-10 object-cover rounded-full") %>
+      <picture>
+        <source srcset="<%= image_url("perfil2-80.webp") %>" type="image/webp">
+        <img src="<%= image_url("perfil2-80.jpg") %>" alt="Rene Garcia (inicio)" class="size-10 object-cover rounded-full" loading="lazy" decoding="async">
+      </picture>
     <% end %>
   <% else %>
     <div class="size-10"></div>

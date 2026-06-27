@@ -8,9 +8,12 @@
 <header class="flex flex-row justify-around">
 
   <%= image_tag(
-    "perfil2.jpg",
+    "perfil2-576.jpg",
+    srcset: { "perfil2-288.jpg" => "1x", "perfil2-576.jpg" => "2x" },
     alt: "Foto de Rene Garcia — software developer, escritor y padre neurodivergente",
     class: "size-72 rounded-xl object-cover rotate-[-3deg]",
+    loading: "lazy",
+    decoding: "async",
   ) %>
   <section class="flex flex-col max-w-md space-y-4">
     <h1 class="text-4xl font-bold tracking-tight"><span class="block">Rene Garcia.
